@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="dashboard" 
+                template="/WEB-INF/jsp/template/template.jsp">
+        <put-attribute name="dashboard.head" value="/WEB-INF/jsp/template/head.jsp"/>
+        <put-attribute name="dashboard.topbar" value="/WEB-INF/jsp/template/topbar.jsp"/>
+        <put-attribute name="dashboard.header_content" value="/WEB-INF/jsp/template/header_content.jsp"/>
+        <put-attribute name="dashboard.header_search_panel" value="/WEB-INF/jsp/template/header_search_panel.jsp"/>
+        <put-attribute name="dashboard.menu" value="/WEB-INF/jsp/template/menu.jsp"/>
+        <put-attribute name="dashboard.home" value="/WEB-INF/jsp/template/home.jsp"/>
+        <put-attribute name="dashboard.footer" value="/WEB-INF/jsp/template/footer.jsp"/>
+        <put-attribute name="dashboard.bottom_script" value="/WEB-INF/jsp/template/bottom_script.jsp"/>
+    </definition>
+    <definition name="ajax.dashboard.login" template="/WEB-INF/jsp/template/login/login.jsp">
+        
+    </definition>
+    <definition name="dashboard.login" extends="dashboard">
+        <put-attribute name="dashboard.home" value="/WEB-INF/jsp/template/login/login.jsp"/>
+    </definition>
+    <definition name="dashboard.dashboard" extends="dashboard">
+        <put-attribute name="dashboard.home" value="/WEB-INF/jsp/template/dashboard/dashboard.jsp"/>
+        <put-attribute name="dashboard.bottom_script" value="/WEB-INF/jsp/template/dashboard/bottom_script.jsp"/>
+    </definition>
+</tiles-definitions>
