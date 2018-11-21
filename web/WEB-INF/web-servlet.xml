@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd       
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd       
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd" >
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <!--COMPONENT SCAn-->
+    <context:component-scan base-package="com.hilman.test.etiqa.web"></context:component-scan>
+    
+    <mvc:resources mapping="/styles/**" location="/WEB-INF/resource/styles/"/>
+    <mvc:resources mapping="/js/**" location="/WEB-INF/resource/js/"/>
+    <mvc:resources mapping="/plugins/**" location="/WEB-INF/resource/plugins/"/>
+    
+    <mvc:resources mapping="/student/styles/**" location="/WEB-INF/resource/styles/"/>
+    <mvc:resources mapping="/student/js/**" location="/WEB-INF/resource/js/"/>
+    <mvc:resources mapping="/student/plugins/**" location="/WEB-INF/resource/plugins/"/>
+    <mvc:resources mapping="/student/images/**" location="/WEB-INF/resource/images/"/>
+    
+    
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"/>
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/definition/layout.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="lang" />
+    </bean>
+</beans>
